@@ -1,17 +1,35 @@
-# Node Express template project
+# Array Utils Lib
 
-This project is based on a GitLab [Project Template](https://docs.gitlab.com/ee/user/project/#create-a-project-from-a-built-in-template).
+A simple utility library for common array operations.
 
-Improvements can be proposed in the [original project](https://gitlab.com/gitlab-org/project-templates/express).
+## Installation
 
-## CI/CD with Auto DevOps
+To install the library, run the following command:
 
-This template is compatible with [Auto DevOps](https://docs.gitlab.com/ee/topics/autodevops/).
+```bash
+npm install array-utils-lib
+```
 
-If Auto DevOps is not already enabled for this project, you can [turn it on](https://docs.gitlab.com/ee/topics/autodevops/#enable-or-disable-auto-devops) in the project settings.
+## Usage 
 
-### Developing with Gitpod
+```javascript
+const ArrayUtils = require('array-utils-lib');
 
-This template has a fully-automated dev setup for [Gitpod](https://docs.gitlab.com/ee/integration/gitpod.html).
+// Example: Splitting an array into chunks
+let chunkedArray = ArrayUtils.chunk([1, 2, 3, 4, 5], 2);
+console.log(chunkedArray); // Output: [[1, 2], [3, 4], [5]]
 
-If you open this project in Gitpod, you'll get all Node dependencies pre-installed.
+// Example: Removing falsy values from an array
+let compactedArray = ArrayUtils.compact([0, 1, false, 2, '', 3]);
+console.log(compactedArray); // Output: [1, 2, 3]
+```
+
+## API
+```javascript
+chunk(array, size) - Splits an array into chunks.
+compact(array) - Removes falsy values from an array.
+flatten(array) - Flattens nested arrays.
+unique(array) - Returns a new array with unique elements.
+difference(array, ...arrays) - Returns elements from the first array that are not in the others.
+intersection(array1, array2) - Returns the intersection of two arrays.
+```
