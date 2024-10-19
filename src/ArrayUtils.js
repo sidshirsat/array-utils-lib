@@ -1,4 +1,3 @@
-// src/ArrayUtils.js
 const ArrayUtils = {
     chunk: function(array, size) {
       if (!Array.isArray(array) || size <= 0) return [];

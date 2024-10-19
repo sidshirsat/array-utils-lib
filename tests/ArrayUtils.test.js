@@ -1,4 +1,3 @@
-// test/ArrayUtils.test.js
 const ArrayUtils = require('../src/ArrayUtils');
 
 test('chunk splits array into chunks', () => {
