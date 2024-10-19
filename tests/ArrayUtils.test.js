@@ -1,9 +1,12 @@
 const ArrayUtils = require('../src/ArrayUtils');
+const { expect } = require('chai');
 
-test('chunk splits array into chunks', () => {
-  expect(ArrayUtils.chunk([1, 2, 3, 4, 5], 2)).toEqual([[1, 2], [3, 4], [5]]);
-});
+describe('ArrayUtils', () => {
+  it('should split array into chunks', () => {
+    expect(ArrayUtils.chunk([1, 2, 3, 4, 5], 2)).to.deep.equal([[1, 2], [3, 4], [5]]);
+  });
 
-test('compact removes falsy values', () => {
-  expect(ArrayUtils.compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
+  it('should remove falsy values', () => {
+    expect(ArrayUtils.compact([0, 1, false, 2, '', 3])).to.deep.equal([1, 2, 3]);
+  });
 });
